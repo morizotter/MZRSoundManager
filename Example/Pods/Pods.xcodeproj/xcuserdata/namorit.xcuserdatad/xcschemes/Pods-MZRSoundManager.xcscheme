@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F61C9D021831472BBA2B77DB"
+               BlueprintIdentifier = "E7123AE4EA044936BE67319F"
                BuildableName = "libPods-MZRSoundManager.a"
                BlueprintName = "Pods-MZRSoundManager"
                ReferencedContainer = "container:Pods.xcodeproj">

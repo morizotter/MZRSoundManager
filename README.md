@@ -8,7 +8,8 @@ Installation
 
 **Cocoapods**
 
-`pod '/path/to/MZRSoundManager', '~> 0.0.1'`
+`pod 'MZRSoundManager', :git => "git@github.com:morizotter/MZRSoundManager.git", :tag => "0.0.1"
+`
 
 *This library is not listed in Cocoapods spec.*
 

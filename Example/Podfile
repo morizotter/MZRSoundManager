@@ -1,2 +1,4 @@
 platform :ios, '7.0'
+
 pod 'MZRSoundManager', :path => '..'
+# pod 'MZRSoundManager', :git => "git@github.com:morizotter/MZRSoundManager.git", :tag => "0.0.1"
