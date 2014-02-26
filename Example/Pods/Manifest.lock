@@ -1,0 +1,18 @@
+PODS:
+  - MZRSoundManager (0.0.1):
+    - MZRSoundManager/MZRSoundManager
+    - MZRSoundManager/OctaveSounds
+  - MZRSoundManager/MZRSoundManager (0.0.1)
+  - MZRSoundManager/OctaveSounds (0.0.1)
+
+DEPENDENCIES:
+  - MZRSoundManager (from `..`)
+
+EXTERNAL SOURCES:
+  MZRSoundManager:
+    :path: ..
+
+SPEC CHECKSUMS:
+  MZRSoundManager: 0928d7c15ff50157b438eba897e3a88a7cca9279
+
+COCOAPODS: 0.29.0
