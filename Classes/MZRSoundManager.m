@@ -58,22 +58,26 @@ static MZRSoundManager *sharedInstance = nil;
 
 - (void)stopSoundWithSoundName:(NSString *)soundName ofType:(NSString *)type
 {
-    AVAudioPlayer *player = [self playerWithSoundName:soundName ofType:type];
-    if (player)
-    {
+    NSArray *players = [self playersWithSoundName:soundName ofType:type];
+    [players enumerateObjectsUsingBlock:^(AVAudioPlayer *player, NSUInteger idx, BOOL *stop) {
         [player stop];
-    }
+    }];
 }
 
 - (BOOL)isPlayingWithSoundName:(NSString *)soundName ofType:(NSString *)type
 {
-    AVAudioPlayer *player = [self playerWithSoundName:soundName ofType:type];
-    if (player)
-    {
-        return player.playing;
-    }
+    NSArray *players = [self playersWithSoundName:soundName ofType:type];
+
+    __block BOOL playing = NO;
+    [players enumerateObjectsUsingBlock:^(AVAudioPlayer *player, NSUInteger idx, BOOL *stop) {
+        if (player.playing)
+        {
+            playing = player.playing;
+            *stop = YES;
+        }
+    }];
     
-    return NO;
+    return playing;
 }
 
 - (void)stopAllSounds
@@ -103,9 +107,9 @@ static MZRSoundManager *sharedInstance = nil;
     return soundFileName;
 }
 
-- (AVAudioPlayer *)playerWithSoundName:(NSString *)soundName ofType:(NSString *)type
+- (NSArray *)playersWithSoundName:(NSString *)soundName ofType:(NSString *)type
 {
-    __block AVAudioPlayer *targetPlayer = nil;
+    __block NSMutableArray *targetPlayers = @[].mutableCopy;
     [_players enumerateObjectsUsingBlock:^(AVAudioPlayer *player, BOOL *stop) {
         
         NSString *soundFileName = [self soundFileNameWithSoundName:soundName ofType:type];
@@ -113,12 +117,11 @@ static MZRSoundManager *sharedInstance = nil;
         
         if ([playerLastPathComponent isEqualToString:soundFileName])
         {
-            targetPlayer = player;
-            *stop = YES;
+            [targetPlayers addObject:player];
         }
     }];
     
-    return targetPlayer;
+    return [NSArray arrayWithArray:targetPlayers];
 }
 
 @end

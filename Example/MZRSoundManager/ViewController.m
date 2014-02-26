@@ -61,14 +61,16 @@
     
     MZRSoundManager *soundManager = [MZRSoundManager sharedInstance];
     
-    if ([soundManager isPlayingWithSoundName:soundName ofType:nil])
-    {
-        [soundManager stopSoundWithSoundName:soundName ofType:nil];
-    }
-    else
-    {
-        [soundManager playSoundWithSoundName:soundName ofType:nil];
-    }
+//    if ([soundManager isPlayingWithSoundName:soundName ofType:nil])
+//    {
+//        [soundManager stopSoundWithSoundName:soundName ofType:nil];
+//    }
+//    else
+//    {
+//        [soundManager playSoundWithSoundName:soundName ofType:nil];
+//    }
+    
+    [soundManager playSoundWithSoundName:soundName ofType:nil];
 }
 
 @end
