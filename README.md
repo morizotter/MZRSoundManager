@@ -23,9 +23,15 @@ Usage
 
 `[[MZRSoundManager sharedInstance] playSoundWithSoundName:soundName ofType:nil];`
 
+**Stop sound**
+
+`[[MZRSoundManager sharedInstance] stopSoundWithSoundName:soundName ofType:nil];`
+
 **Stop all sounds**
 
 `[[MZRSoundManager sharedInstance] stopAllSounds];`
+
+Please see classes in detail.
 
 Requirement
 -----------
