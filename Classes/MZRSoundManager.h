@@ -18,7 +18,8 @@ extern NSString *const MZRSoundManagerTypeWav;
 + (MZRSoundManager *)sharedInstance;
 
 - (void)playSoundWithSoundName:(NSString *)soundName ofType:(NSString *)type;
-
+- (void)stopSoundWithSoundName:(NSString *)soundName ofType:(NSString *)type;
+- (BOOL)isPlayingWithSoundName:(NSString *)soundName ofType:(NSString *)type;
 - (void)stopAllSounds;
 
 @end

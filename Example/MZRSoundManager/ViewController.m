@@ -59,7 +59,16 @@
 {
     NSString *soundName = self.soundNames[indexPath.row];
     
-    [[MZRSoundManager sharedInstance] playSoundWithSoundName:soundName ofType:nil];
+    MZRSoundManager *soundManager = [MZRSoundManager sharedInstance];
+    
+    if ([soundManager isPlayingWithSoundName:soundName ofType:nil])
+    {
+        [soundManager stopSoundWithSoundName:soundName ofType:nil];
+    }
+    else
+    {
+        [soundManager playSoundWithSoundName:soundName ofType:nil];
+    }
 }
 
 @end

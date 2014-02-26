@@ -8,13 +8,24 @@ Installation
 
 **Cocoapods**
 
-pod '/path/to/MZRSoundManager', '~> 0.0.1'
+`pod '/path/to/MZRSoundManager', '~> 0.0.1'`
 
 *This library is not listed in Cocoapods spec.*
 
 **Manually**
 
 Just copy **Classes** directory and contents of *Resources* directory to your project.
+
+Usage
+------
+
+**Play sound**
+
+`[[MZRSoundManager sharedInstance] playSoundWithSoundName:soundName ofType:nil];`
+
+**Stop all sounds**
+
+`[[MZRSoundManager sharedInstance] stopAllSounds];`
 
 Requirement
 -----------
