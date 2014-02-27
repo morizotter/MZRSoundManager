@@ -45,7 +45,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    NSString *soundName = [self.soundNames[indexPath.row] stringByReplacingOccurrencesOfString:@"MZRSoundManager" withString:@""];
+    NSString *soundName = self.soundNames[indexPath.row];
+    soundName = [soundName stringByReplacingOccurrencesOfString:@"MZRSoundManager" withString:@""];
     soundName = [soundName stringByReplacingOccurrencesOfString:@".aif" withString:@""];
     
     cell.textLabel.text = soundName;

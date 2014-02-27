@@ -48,7 +48,7 @@ static MZRSoundManager *sharedInstance = nil;
 - (void)playSoundWithSoundName:(NSString *)soundName ofType:(NSString *)type
 {
     NSString *path = [[NSBundle mainBundle] pathForResource:soundName ofType:type];
-    NSURL* url = [NSURL fileURLWithPath:path];
+    NSURL *url = [NSURL fileURLWithPath:path];
     AVAudioPlayer* player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     [player setDelegate:self];
     [_players addObject:player];
